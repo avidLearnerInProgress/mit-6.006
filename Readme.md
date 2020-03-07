@@ -35,7 +35,7 @@
                 base_case := T(1) = Θ(1)  
                 T(N) = Θ(1) + .... log N times ~ Θ(log N)  
 
-    #### 2-Dimensional version
+#### 2-Dimensional version
     Given - *n* rows and *m* columns. Element 'i' is a peak if and only if all its neighbors are less than the 'i'. where neighbors = {[i + 1][j], [i - 1][j], [i][j + 1], [i][j - 1]}  
     Problem - find peak if it exists  
     Algorithm - 
