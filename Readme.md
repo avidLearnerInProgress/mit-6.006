@@ -1,6 +1,8 @@
 # Lecture 1
 
 ## Peak finder problem
+-----
+
 A value is considered a peak, if it is larger than its *immediate* neighbours.
 
 ### 1-Dimensional version  
@@ -38,7 +40,7 @@ A value is considered a peak, if it is larger than its *immediate* neighbours.
 
     * ![1d_version_binary_search](./data/snapshots/1d_version_binary_search.png)  
 
-#### 2-Dimensional version
+### 2-Dimensional version
 
 <p align = "center"><img src = "./data/snapshots/2d-version-initial.png"> </p>
 
