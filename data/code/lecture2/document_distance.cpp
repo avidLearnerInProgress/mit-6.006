@@ -3,7 +3,9 @@ using namespace std;
 
 vector<string> readFromFile(fstream &f, string word, string file){
     f.open(file.c_str());
+    locale loc;
     vector<string> wordlist;
+    transform(word.begin(), word.end(), word.begin(), ::tolower); 
     while(f >> word)
         wordlist.push_back(word);
     f.close();
@@ -20,7 +22,7 @@ map<string, int> countFrequency(vector<string> data){
         return m;
 }
 
-int calculateDocumentDistance(map<string, int> fA, map<string, int> fB){
+double calculateDocumentDistance(map<string, int> fA, map<string, int> fB){
     
     long long int distance = 0, dA = 0, dB = 0;
     for(auto it = fB.begin(); it != fB.end(); it++){
@@ -30,7 +32,7 @@ int calculateDocumentDistance(map<string, int> fA, map<string, int> fB){
             dB += (it->second * it->second);
         }
     }
-    return acos(distance / (sqrt(dA) * sqrt(dB)));
+    return (double)acos(distance / (sqrt(dA) * sqrt(dB)));
 }
 
 
@@ -52,5 +54,4 @@ int main(){
         cout<<key<<" "<<value<<endl;
 
     cout<<calculateDocumentDistance(frequencyA, frequencyB)<<"\n";
-
 }
